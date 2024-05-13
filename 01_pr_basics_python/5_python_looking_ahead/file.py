@@ -36,3 +36,6 @@ file_handle = open("lorem_ipsum_2", "a")
 my_string = "\nThe appended line.\nAnother appended line."
 file_handle.write(my_string)
 file_handle.close()
+
+with open("lorem_ipsum_1.txt", "r") as fh:
+    print(fh.readline())
