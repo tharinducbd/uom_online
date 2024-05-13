@@ -1,10 +1,10 @@
 # Errors
 
 # NameError: when accessing an undefined variable
-try:
-    print(num)
-except NameError:
-    print("NameError encountered")
+# try:
+#     print(num)
+# except NameError:
+#     print("NameError encountered")
 
 # IndexError: when an out of range index value is referenced
 my_list = list(range(5))
@@ -28,10 +28,10 @@ except ValueError:
     print("ValueError encountered")
 
 # ImportError: when something is wrong with an import statment
-try:
-    import dummy_module
-except ImportError:
-    print("ImportError encountered")
+# try:
+#     import dummy_module
+# except ImportError:
+#     print("ImportError encountered")
 
 # Example
 try:
