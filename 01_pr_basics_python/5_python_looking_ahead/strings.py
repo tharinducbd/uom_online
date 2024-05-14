@@ -15,3 +15,9 @@ print(word[:-16])
 # Membership operator
 print(("U" in word))
 print(("X" in word))
+
+# Raw strings: to suppress Escape characters
+print(r"\n")
+
+# String formattings
+print("My name is %s and I am %d years old!" % ('Marvin', 2000))
