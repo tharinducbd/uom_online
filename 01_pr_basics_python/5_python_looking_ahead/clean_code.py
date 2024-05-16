@@ -11,18 +11,17 @@ def _get_lent_books(member_id):
 
 def _is_member_eligible_to_lend(member_id):
     max_books_to_lend = 2
-    is_eligible = False
 
-    if _is_library_member(member_id):
-        books_lent = _get_lent_books(member_id)
-        if len(books_lent) < max_books_to_lend:
-            is_eligible = True
-        else:
-            print("User not eligible: cannot lend more than two books")
-    else:
-        print("User not eligble: User is not a member")
+    if not _is_library_member(member_id):
+        print("User not eligible: user is not a member")
+        return False
 
-    return is_eligible
+    books_lent = _get_lent_books(member_id)
+    if len(books_lent) == max_books_to_lend:
+        print("User not eligible: cannot lend more than 2 books")
+        return False
+
+    return True
 
 
 def _is_book_available(book_id):
