@@ -26,53 +26,67 @@ def validate_op(operation):
     return True
 
 
-def validate_input(user_input):
+def is_input_op(user_input):
     if '#' or '$' in user_input:
-        return "is_op"
+        return True
     else:
-        try:
-            num = float(user_input)
-        except ValueError:
-            print("Not a valid number,please enter again")
-            return "is_invalid"
-        return "is_float"
+        return False
 
+
+def is_input_num(user_input):
+    try:
+        num = float(user_input)
+    except ValueError:
+        return False
+    else:
+        return True
 
 
 def select_op(operation):
     if not validate_op(operation):
         print("Unrecognized operation")
         return None
-    
+
     if operation == "#":
         return -1
     elif operation == "$":
         return None
 
-    while True:
-        a = input("Enter first number: ")
-        if validate_input(a) == 'is_op':
+    a = input("Enter first number: ")
+    print(a)
+    re_prompt_input = True
+    while re_prompt_input:
+
+        if is_input_op(a):
             if a == '#':
                 return -1
             elif a[-1] == '$':
                 return None
-        elif validate_input(a) == 'is_invalid':
-            continue
-        elif validate_input(a) == 'is_float':
-            break
 
-    while True:
-        b = input("Enter second number: ")
-        if validate_input(b) == 'is_op':
+        if not is_input_num(a):
+            a = input("Enter first number: ")
+            print(a)
+            continue
+
+        re_prompt_input = False
+
+    b = input("Enter second number: ")
+    print(b)
+    re_prompt_input = True
+    while re_prompt_input:
+
+        if is_input_op(b):
             if b == '#':
                 return -1
             elif b[-1] == '$':
                 return None
-        elif validate_input(b) == 'is_invalid':
-            continue
-        elif validate_input(b) == 'is_float':
-            break
 
+        if not is_input_num(b):
+            b = input("Enter first number: ")
+            print(b)
+            continue
+
+        re_prompt_input = False
 
     a, b = float(a), float(b)
     if operation == "+":
