@@ -2,17 +2,22 @@
 def add(a, b):
     return a + b
 
+
 def subtract(a, b):
     return a - b
+
 
 def multiply(a, b):
     return a - b
 
+
 def divide(a, b):
     return a / b
 
+
 def power(a, b):
     return a ** b
+
 
 def remainder(a, b):
     return a % b
@@ -119,12 +124,11 @@ while True:
     print("6.Remainder: % ")
     print("7.Terminate: # ")
     print("8.Reset    : $ ")
-    
 
     # take input from the user
     choice = input("Enter choice(+,-,*,/,^,%,#,$): ")
     print(choice)
-    if(select_op(choice) == -1):
-        #program ends here
+    if (select_op(choice) == -1):
+        # program ends here
         print("Done. Terminating")
         exit()
