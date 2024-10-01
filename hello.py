@@ -1,6 +1,6 @@
 import datetime
 
-print("\nWelcome to the UOM Open Learning Platform!")
+print("\nUOM Open Learning Course")
 
 today = datetime.datetime.today()
 print(today, '\n')
